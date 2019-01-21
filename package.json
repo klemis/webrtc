@@ -7,8 +7,19 @@
   },
   "author": "lemisz",
   "license": "ISC",
-  "description": "",
+  "description": "Real time web application",
   "dependencies": {
+    "asynquence": "^0.10.2",
+    "asynquence-contrib": "^0.28.2",
     "minimist": "^1.2.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamillemisz/webRTC.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kamillemisz/webRTC/issues"
+  },
+  "homepage": "https://github.com/kamillemisz/webRTC#readme"
 }
