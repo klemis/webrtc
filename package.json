@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage --forceExit",
+    "start": "node app.js"
   },
   "author": "lemisz",
   "license": "ISC",
@@ -13,7 +14,9 @@
     "asynquence-contrib": "^0.28.2",
     "minimist": "^1.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kamillemisz/webRTC.git"
