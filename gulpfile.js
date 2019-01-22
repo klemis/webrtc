@@ -5,20 +5,20 @@ const minifyCSS = require('gulp-csso');
 const concat = require('gulp-concat');
 
 function html() {
-  return src('static/html/*.html')
+  return src('public/html/*.html')
     .pipe(pug())
     .pipe(dest('build/html'))
 }
 
 function css() {
-  return src('static/sass/*.sass')
-    .pipe(less())
+  return src('public/sass/*.sass')
+    .pipe(sass())
     .pipe(minifyCSS())
     .pipe(dest('build/css'))
 }
 
 function js() {
-  return src('static/javascript/*.js', { sourcemaps: true })
+  return src('public/javascript/*.js', { sourcemaps: true })
     .pipe(concat('app.min.js'))
     .pipe(dest('build/js', { sourcemaps: true }))
 }
