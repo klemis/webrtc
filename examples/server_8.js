@@ -22,7 +22,7 @@ function handleHTTP (req,res) {
 
 function handleIO(socket) {
 	function disconnect() {
-		clearInterval(intv);
+		//clearInterval(intv);
 		console.log("client disconnected");
 	}
 
@@ -38,9 +38,9 @@ function handleIO(socket) {
 		//io.broadcast
 	});
 
-	var intv = setInterval(function(){
-		socket.emit("hello", Math.random());
-	},1000);
+	// var intv = setInterval(function(){
+	// 	socket.emit("hello", Math.random());
+	// },1000);
 }
 
 var hostname = '127.0.0.1';

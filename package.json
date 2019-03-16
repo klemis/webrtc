@@ -14,7 +14,8 @@
     "asynquence-contrib": "^0.28.2",
     "minimist": "^1.2.0",
     "node-static": "^0.7.11",
-    "socket.io": "^0.9.19"
+    "socket.io": "^0.9.19",
+    "webrtc-adapter": "^7.2.1"
   },
   "devDependencies": {
     "gulp": "^4.0.0"
