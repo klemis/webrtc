@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>12.html</title>
-<style>#the_video{display:none;}</style>
-</head>
-<body>
-<h1>11.html</h1>
-
-<video id="the_video" width="500px" height="410px"></video>
-
-<script src="/jquery.js"></script>
-<script src="/node_modules/asynquence/asq.js"></script>
-<script src="/node_modules/asynquence-contrib/contrib.js"></script>
-<script src="/h5ive.bundle.js"></script>
-<script src="/socket.io/socket.io.js"></script>
-
-<script>
-
 // rtc stuff
 function createPeerConnection(config,optional) {
 	if (window.RTCPeerConnection) return new RTCPeerConnection(config,optional);
@@ -237,7 +218,3 @@ steps = ASQ()
 .or(function(err){
 	console.log(err.stack || err);
 });
-
-</script>
-</body>
-</html>

@@ -8,11 +8,8 @@ function handleHTTP(req,res) {
 			req.resume();
 		}
 		else if (
-			req.url == "/jquery.js" ||
-			req.url == "/main.js" 
-			// req.url == "/node_modules/asynquence/asq.js" ||
-			// req.url == "/node_modules/asynquence-contrib/contrib.js" ||
-			// req.url == "/h5ive.bundle.js"
+			req.url == "/public/js/jquery.js" ||
+			req.url == "/public/js/peer_connection.js"
 		) {
 			req.addListener("end",function(){
 				static_files.serve(req,res);
@@ -30,20 +27,22 @@ function handleHTTP(req,res) {
 	}
 }
 
+const options = {
+    key: fs.readFileSync('test/fixtures/keys/agent2-key.pem'),
+    cert: fs.readFileSync('test/fixtures/keys/agent2-cert.pem')
+};
+
+const https = require('https');
+const fs = require('fs');
+
 var
 	http = require("http"),
-	httpserv = http.createServer(handleHTTP),
+	httpserv = http.createServer(options, handleHTTP),
 
 	port = 8006,
-	host = "127.0.0.1",
-
-	// ASQ = require("asynquence"),
+	host = "192.168.0.101",
 	node_static = require("node-static"),
 	static_files = new node_static.Server(__dirname)
-
-	// io = require("socket.io").listen(httpserv),
-
-	// channels = []
 ;
 
 httpserv.listen(port, host);

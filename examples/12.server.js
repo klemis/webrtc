@@ -8,10 +8,10 @@ function handleHTTP(req,res) {
 			req.resume();
 		}
 		else if (
-			req.url == "/jquery.js" ||
+			req.url == "/public/js/jquery.js" ||
 			req.url == "/node_modules/asynquence/asq.js" ||
-			req.url == "/node_modules/asynquence-contrib/contrib.js" ||
-			req.url == "/h5ive.bundle.js"
+			req.url == "/public/js/peer_connection.js" ||
+			req.url == "/node_modules/asynquence-contrib/contrib.js"
 		) {
 			req.addListener("end",function(){
 				static_files.serve(req,res);
