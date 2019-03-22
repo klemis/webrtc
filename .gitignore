@@ -1,5 +1,6 @@
 # ignore external packages
 /node_modules
+/examples
 /logs
 .env
 npm-debug.log
