@@ -32,9 +32,6 @@ const options = {
     cert: fs.readFileSync('test/fixtures/keys/agent2-cert.pem')
 };
 
-const https = require('https');
-const fs = require('fs');
-
 var
 	http = require("http"),
 	httpserv = http.createServer(options, handleHTTP),
