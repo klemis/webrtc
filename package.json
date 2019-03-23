@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage --forceExit",
-    "start": "node 14.server.js"
+    "start": "node app.js"
   },
   "author": "lemisz",
   "license": "ISC",
@@ -12,6 +12,7 @@
   "dependencies": {
     "asynquence": "^0.10.2",
     "asynquence-contrib": "^0.28.2",
+    "express": "^4.16.4",
     "fs": "0.0.1-security",
     "heroku": "^7.22.7",
     "minimist": "^1.2.0",
