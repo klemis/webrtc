@@ -1,1 +1,1 @@
-web: node 14.server.js
+web: node app.js
