@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage --forceExit",
-    "start": "node app.js"
+    "start": "node 14.server.js"
   },
   "author": "lemisz",
   "license": "ISC",
@@ -12,8 +12,11 @@
   "dependencies": {
     "asynquence": "^0.10.2",
     "asynquence-contrib": "^0.28.2",
+    "fs": "0.0.1-security",
+    "heroku": "^7.22.7",
     "minimist": "^1.2.0",
     "node-static": "^0.7.11",
+    "nodemon": "^1.18.10",
     "socket.io": "^0.9.19",
     "webrtc-adapter": "^7.2.1"
   },

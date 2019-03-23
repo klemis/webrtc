@@ -27,17 +27,22 @@ function handleHTTP(req,res) {
 	}
 }
 
-const options = {
-    key: fs.readFileSync('test/fixtures/keys/agent2-key.pem'),
-    cert: fs.readFileSync('test/fixtures/keys/agent2-cert.pem')
-};
+// https stuff
+const https = require('https');
+const fs = require('fs');
+
+// const options = {
+//     key: fs.readFileSync('./ssl/privatekey.pem'),
+//     cert: fs.readFileSync('./ssl/certificate.pem')
+// };
 
 var
 	http = require("http"),
-	httpserv = http.createServer(options, handleHTTP),
+	httpserv = http.createServer(handleHTTP),
+	// httpserv = http.createServer(options, handleHTTP),
 
-	port = 8006,
-	host = "192.168.0.101",
+	port = 5000,
+	host = "localhost",
 	node_static = require("node-static"),
 	static_files = new node_static.Server(__dirname)
 ;
