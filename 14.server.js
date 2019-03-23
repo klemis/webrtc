@@ -28,8 +28,8 @@ function handleHTTP(req,res) {
 }
 
 // https stuff
-const https = require('https');
-const fs = require('fs');
+// const https = require('https');
+// const fs = require('fs');
 
 // const options = {
 //     key: fs.readFileSync('./ssl/privatekey.pem'),
