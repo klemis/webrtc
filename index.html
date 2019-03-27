@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebRTC Communication</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-center">
+                <h1 class="font-weight-bold mt-sm-3 mb-sm-3">Enjoy your video!</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <video id="localVideo" playsinline autoplay muted></video>
+            <video id="remoteVideo" playsinline autoplay></video>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center mt-sm-3">
+                <button type="button" class="btn btn-outline-secondary" id="startButton">Start</button>
+                <button type="button" class="btn btn-outline-secondary" id="callButton">Call</button>
+                <button type="button" class="btn btn-outline-secondary" id="upgradeButton">Turn on video</button>
+                <button type="button" class="btn btn-outline-secondary" id="hangupButton">Hang Up</button>
+            </div>
+        </div>
+        <script src="/static/js/peer_connection.js" async></script>
+
+        <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    </body>
+</html>
