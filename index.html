@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            video {
+                /* max-width: calc(50% - 100px); */
+                margin: 0 50px;
+                box-sizing: border-box;
+                border-radius: 2px;
+                padding: 0;
+                box-shadow: rgba(156, 172, 172, 0.2) 0px 2px 2px, rgba(156, 172, 172, 0.2) 0px 4px 4px, rgba(156, 172, 172, 0.2) 0px 8px 8px, rgba(156, 172, 172, 0.2) 0px 16px 16px, rgba(156, 172, 172, 0.2) 0px 32px 32px, rgba(156, 172, 172, 0.2) 0px 64px 64px;
+            }
+        </style>
         <title>WebRTC Communication</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
@@ -22,8 +32,9 @@
                 <button type="button" class="btn btn-outline-secondary" id="hangupButton">Hang Up</button>
             </div>
         </div>
-        <script src="/static/js/peer_connection.js" async></script>
-
+        <!-- <script src="/static/js/peer_connection.js" async></script> -->
+        <script src="/static/js/scaledrone.js"></script>
+        <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
         <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     </body>
 </html>
