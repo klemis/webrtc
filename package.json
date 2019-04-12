@@ -4,27 +4,24 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage --forceExit",
-    "start": "node app.js"
+    "start": "nodemon app.js",
+    "watch": "watchify ./public/js/simple-peer.js -o ./public/js/bundle.js"
   },
   "author": "lemisz",
   "license": "ISC",
   "description": "Real time web application",
   "dependencies": {
-    "asynquence": "^0.10.2",
-    "asynquence-contrib": "^0.28.2",
-    "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "fs": "0.0.1-security",
     "heroku": "^7.22.7",
     "http": "0.0.0",
-    "minimist": "^1.2.0",
     "node-static": "^0.7.11",
     "nodemon": "^1.18.10",
-    "socket.io": "^2.2.0",
-    "webrtc-adapter": "^7.2.1"
+    "simple-peer": "^9.3.0",
+    "socket.io": "^2.2.0"
   },
   "devDependencies": {
-    "gulp": "^4.0.0"
+    "gulp": "^4.0.0",
+    "watchify": "^3.11.1"
   },
   "repository": {
     "type": "git",

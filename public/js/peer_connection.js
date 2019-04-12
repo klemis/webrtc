@@ -231,18 +231,15 @@ function hangup() {
 }
 
 // Create a new socket to the server to be used as a signalling channel.
-// var io = require('socket.io-client')
-var socket = io.connect('http://127.0.0.1:5000', {reconnect: true});
 
-// let socket = io()
-// socket.on('connect', function(socket) {
-//   console.log('Connected!');
-// });
+let socket = io()
+socket.on('connect', function(socket) {
+  console.log('Connected!');
+});
 
-// socket = io.connect('http://127.0.0.1:5000');
 
-socket.on('connect', start); // Callback when the socket connects.
-socket.on('error', ); // Callback when the socket receives and error.
-socket.on('disconnect', ); // Callback when the socket disconnects.
-socket.on('message', ); // Callback when a messaged is received.
+// socket.on('connect', start); // Callback when the socket connects.
+// socket.on('error', ); // Callback when the socket receives and error.
+// socket.on('disconnect', ); // Callback when the socket disconnects.
+// socket.on('message', ); // Callback when a messaged is received.
 

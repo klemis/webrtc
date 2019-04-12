@@ -4,24 +4,45 @@ const http = require('http').Server(app)
 const io = require('socket.io').listen(http);
 const PORT = process.env.PORT || 5000
 
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/public'))
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
+let clients = 0
+
 // This callback function is called every time a socket tries to connect to the server
 io.on('connection', function(socket) {
   console.log((new Date()) + ' Connection established.');
-  // When a user send a SDP message broadcast to all users in the room
-  socket.on('message', function(message) {
-    console.log((new Date()) + ' Received Message, broadcasting: ' + message );
-    socket.broadcast.emit('message', message);
+  socket.on('NewClient', function() {
+    if(clients < 2) {
+      if(clients == 1) {
+        this.emit('CreatePeer')
+      }
+    }
+    else
+      this.emit('SessionAcive')
+    clients++;
+    console.log((new Date()) + ' Peer connected.');
   });
-  // When the user hangs up  broadcast bye signal to all users in the room
-  socket.on('disconnect', function() {
-    console.log((new Date()) + ' Peer disconnected.');
-    socket.broadcast.emit('user disconnected');
-  });
+  socket.on('Offer', SendOffer)
+  socket.on('Answer', SendAnswer)
+  socket.on('disconect', Disconnect)
+
 });
+
+function Disconnect() {
+  if (clients >0) {
+    clients--
+  }
+}
+
+function SendOffer(offer) {
+  this.broadcast.emit('BackOffer', offer)
+}
+
+function SendAnswer(data) {
+  this.broadcast.emit('BackAnswer', data)
+}
 
 http.listen(PORT, () => console.log(`Listening on ${ PORT }`))
